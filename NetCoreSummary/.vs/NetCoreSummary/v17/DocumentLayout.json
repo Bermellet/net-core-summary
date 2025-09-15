@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\Repositories\\net-core-summary\\NetCoreSummary\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A8D4A7E-B519-4A91-B48A-C8BBDD5EA6BC}|NetCoreSummary\\NetCoreSummary.csproj|d:\\repositories\\net-core-summary\\netcoresummary\\netcoresummary\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A8D4A7E-B519-4A91-B48A-C8BBDD5EA6BC}|NetCoreSummary\\NetCoreSummary.csproj|solutionrelative:netcoresummary\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A8D4A7E-B519-4A91-B48A-C8BBDD5EA6BC}|NetCoreSummary\\NetCoreSummary.csproj|d:\\repositories\\net-core-summary\\netcoresummary\\netcoresummary\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A8D4A7E-B519-4A91-B48A-C8BBDD5EA6BC}|NetCoreSummary\\NetCoreSummary.csproj|solutionrelative:netcoresummary\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A8D4A7E-B519-4A91-B48A-C8BBDD5EA6BC}|NetCoreSummary\\NetCoreSummary.csproj|d:\\repositories\\net-core-summary\\netcoresummary\\netcoresummary\\isale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A8D4A7E-B519-4A91-B48A-C8BBDD5EA6BC}|NetCoreSummary\\NetCoreSummary.csproj|solutionrelative:netcoresummary\\isale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,24 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Repositories\\net-core-summary\\NetCoreSummary\\NetCoreSummary\\Program.cs",
-              "RelativeDocumentMoniker": "NetCoreSummary\\Program.cs",
-              "ToolTip": "D:\\Repositories\\net-core-summary\\NetCoreSummary\\NetCoreSummary\\Program.cs",
-              "RelativeToolTip": "NetCoreSummary\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ISale.cs",
+              "DocumentMoniker": "D:\\Repositories\\net-core-summary\\NetCoreSummary\\NetCoreSummary\\ISale.cs",
+              "RelativeDocumentMoniker": "NetCoreSummary\\ISale.cs",
+              "ToolTip": "D:\\Repositories\\net-core-summary\\NetCoreSummary\\NetCoreSummary\\ISale.cs",
+              "RelativeToolTip": "NetCoreSummary\\ISale.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T15:30:34.189Z",
+              "WhenOpened": "2025-09-15T15:52:03.899Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Sale.cs",
+              "DocumentMoniker": "D:\\Repositories\\net-core-summary\\NetCoreSummary\\NetCoreSummary\\Sale.cs",
+              "RelativeDocumentMoniker": "NetCoreSummary\\Sale.cs",
+              "ToolTip": "D:\\Repositories\\net-core-summary\\NetCoreSummary\\NetCoreSummary\\Sale.cs",
+              "RelativeToolTip": "NetCoreSummary\\Sale.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAIwCYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T15:30:34.189Z",
+              "EditorCaption": ""
             }
           ]
         }
