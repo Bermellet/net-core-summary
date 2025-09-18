@@ -1,10 +1,13 @@
 ﻿
-interface ISale
+namespace NetCoreSummary
 {
-    decimal Total { get; set; }
-}
+    interface ISale
+    {
+        decimal Total { get; set; }
+    }
 
-interface ISave
-{
-    public void Save();
+    interface ISave
+    {
+        public void Save();
+    }
 }
