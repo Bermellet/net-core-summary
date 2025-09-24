@@ -2,23 +2,28 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using UniversityApiBackend.DataAccess;
 using UniversityApiBackend.Helpers;
 using UniversityApiBackend.Models;
 using UniversityApiBackend.Models.DataModels;
 
 namespace UniversityApiBackend.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AccountController : ControllerBase
     {
         private readonly JwtSettings _jwtSettings;
+        private readonly UniversityDBContext _context;
 
-        public AccountController(JwtSettings jwtSettings)
+
+        public AccountController(JwtSettings jwtSettings, UniversityDBContext context)
         {
             _jwtSettings = jwtSettings;
+            _context = context;
         }
 
+        // TODO: Change by real users in BD (using _context)
         private IEnumerable<User> Logins = new List<User>()
         {
             new User()
@@ -43,15 +48,14 @@ namespace UniversityApiBackend.Controllers
             try
             {
                 var Token = new UserTokens();
-                var Valid = Logins.Any(user => user.Name.Equals(userLogins.UserName, StringComparison.OrdinalIgnoreCase));
+                var user = Logins.FirstOrDefault(user => user.Name.Equals(userLogins.UserName, StringComparison.OrdinalIgnoreCase));
 
-                if (Valid)
+                if (user != null)
                 {
-                    var user = Logins.FirstOrDefault(user => user.Name.Equals(userLogins.UserName, StringComparison.OrdinalIgnoreCase));
                     Token = JwtHelpers.GenTokenKey(new UserTokens()
                     {
-                        UserName: user.Name,
-                        EmailId: user.Email,
+                        UserName = user.Name,
+                        EmailId = user.Email,
                         Id = user.Id,
                         GuidId = Guid.NewGuid()
                     }, _jwtSettings);
