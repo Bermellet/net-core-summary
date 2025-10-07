@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.ConstrainedExecution;
 using UniversityApiBackend.DataAccess;
 using UniversityApiBackend.Helpers;
 using UniversityApiBackend.Models;
@@ -24,37 +25,23 @@ namespace UniversityApiBackend.Controllers
         }
 
         // TODO: Change by real users in BD (using _context)
-        private IEnumerable<User> Logins = new List<User>()
-        {
-            new User()
-            {
-                Id = 1,
-                Email = "martin@imaginagroup.com",
-                Name = "Admin",
-                Password = "Admin"
-            },
-            new User()
-            {
-                Id = 2,
-                Email = "pepe@imaginagroup.com",
-                Name = "User1",
-                Password = "pepe"
-            },
-        };
-
         [HttpPost]
         public IActionResult GetToken(UserLogins userLogins)
         {
             try
             {
                 var Token = new UserTokens();
-                var user = Logins.FirstOrDefault(user => user.Name.Equals(userLogins.UserName, StringComparison.OrdinalIgnoreCase));
+                // TODO: Hash password
+                var user = _context.Users?
+                    .Where(u => u.Username.Equals(userLogins.UserName, StringComparison.OrdinalIgnoreCase) && u.Password == userLogins.Password)
+                    .FirstOrDefault();
 
                 if (user != null)
                 {
+                    Console.WriteLine("User found", user.Name);
                     Token = JwtHelpers.GenTokenKey(new UserTokens()
                     {
-                        UserName = user.Name,
+                        UserName = user.Username,
                         EmailId = user.Email,
                         Id = user.Id,
                         GuidId = Guid.NewGuid()
@@ -76,7 +63,8 @@ namespace UniversityApiBackend.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")]
         public IActionResult GetUserList()
         {
-            return Ok(Logins);
+            var users = _context.Users?.ToList();
+            return Ok(users);
         }
     }
 }
