@@ -34,5 +34,22 @@ namespace InternationalApi.Controllers
             });
         }
 
+        [HttpGet]
+        [Route("SharedResource")]
+        public IActionResult GetUsingSharedResource()
+        {
+            // Find text
+            var article = _stringLocalizer["Article"];
+            var postName = _stringLocalizer.GetString("Welcome").Value ?? string.Empty;
+            var todayIs = string.Format(_sharedResourceLocalizer.GetString("TodayIs"), DateTime.Now.ToLongDateString());
+
+            return Ok(new
+            {
+                PostType = article.Value,
+                PostName = postName,
+                TodayIs = todayIs,
+            });
+        }
+
     }
 }
